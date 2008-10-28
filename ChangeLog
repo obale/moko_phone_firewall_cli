@@ -1,0 +1,23 @@
+2008-10-28 Alex Oberhauser <oberhauseralex@networld.to>
+
+	* src/pf-cli.c:
+	Starting with the implementation of a simple command line interface.
+	At the moment there is only implemented the add function for black-
+	and whitelist and help (--help or -h) for it. The later function will
+	be follow stepwise.
+
+	* include/*:
+	The Headerfiles of the phone firewall.
+
+	* lib/libphonefirewall.so:
+	The phonefirewall as a dynamic library. Compile for the arm4t
+	architecture (for our Freerunner).
+
+	* phonefirewall.sql:
+	SQL creation syntax for a black- and whitelist. At the moment is
+	necessary to create the database manually (in the opkg package we will
+	automate this).
+
+	* env-export:
+	Script for the set up of the environment variables for the
+	cross compiling.
