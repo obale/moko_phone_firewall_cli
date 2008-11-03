@@ -1,3 +1,10 @@
+2008-11-03 Alex Oberhauser <oberhauseralex@networld.to>
+
+	* src/pf-cli.c:
+	Adding the edit function and the script in the comments how the
+	database could be created. The database would not be created
+	automatically.
+
 2008-10-28 Alex Oberhauser <oberhauseralex@networld.to>
 
 	* src/pf-cli.c:
