@@ -19,12 +19,11 @@
 ###########################################################################
 RM = /bin/rm
 CLFLAGS += --std=c99 -Wall -Werror -DDEBUG -g -o -O0
-LIB = -lphonefirewall
+LIB = -lsqlite3 -lphonefirewall
 DOXYGEN = /usr/bin/doxygen
 SRCDIR = src
 BINDIR = bin
 INCLUDEDIR = include
-LIBDIR = lib
 
 all: pf-cli
 
@@ -32,7 +31,7 @@ pf-cli.o: $(SRCDIR)/pf-cli.c $(INCLUDEDIR)/libphonefirewall.h
 	$(CC) $(CLFLAGS) -c $(SRCDIR)/pf-cli.c -o $(SRCDIR)/$@
 
 pf-cli: $(SRCDIR)/pf-cli.o
-	$(CC) $(CLFLAGS) -L$(LIBDIR) -lphonefirewall -lsqlite3 $(SRCDIR)/pf-cli.o -o $(BINDIR)/$@
+	$(CC) $(CLFLAGS) $(LIB) $(SRCDIR)/pf-cli.o -o $(BINDIR)/$@
 
 .PHONY: clean
 clean:
